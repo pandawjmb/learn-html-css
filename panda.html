@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>panda</title>
+    <style type="text/css">
+        .card-wrapper {
+            border: solid rgb(187, 187, 187) 1px;
+            width: 450px;
+            height: 550px;
+            background: black;
+            position: relative;
+            padding: 1em;
+        }
+
+        .card-wrapper .background {
+            background: rgb(39, 38, 38);
+        }
+
+        .card-wrapper .head {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .card-wrapper .head .mobile-phone {
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        .card-wrapper .head .time {
+            color: #ffff;
+        }
+
+        .card-wrapper .head .mobile-phone div,
+        .card-wrapper .head .pattern div {
+            padding: 0.23em;
+            color: aliceblue;
+
+        }
+
+        .card-wrapper .head .pattern {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .card-wrapper .title {
+            display: flex;
+            flex-direction: row;
+            margin-top: 0.5em;
+            font-size: 20px;
+            flex: 1 1 0;
+        }
+
+        .card-wrapper .title .return {
+            display: flex;
+            flex-direction: row;
+            color: #0000FF;
+        }
+
+        .card-wrapper .title .return .brackets {
+            margin: .2em;
+        }
+
+        .card-wrapper .title .iPhone {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0 0 30%;
+            color: #fff;
+        }
+
+        .card-wrapper .iPhone-disk {
+            position: relative;
+            margin-top: 35px;
+        }
+
+        .card-wrapper .iPhone-disk .background .disk-wrapper {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .card-wrapper .iPhone-disk .background .disk-wrapper .name {
+            display: flex;
+            flex: 1 1 0;
+            color: #fff;
+        }
+
+        .card-wrapper .iPhone-disk .background .disk-wrapper .disk {
+            display: flex;
+            flex: 1 1 0;
+            color: rgb(153, 147, 147);
+        }
+
+        .card-wrapper .iPhone-disk {
+            padding: 1px;
+
+        }
+
+        .card-wrapper .iPhone-disk .background .space .statistics {
+            margin-top: 1em;
+            display: flex;
+            height: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 0 1px #aaa;
+        }
+
+        .card-wrapper .iPhone-disk .App {
+            background: rgb(212, 46, 82);
+        }
+
+        .card-wrapper .iPhone-disk .photo {
+            background: rgb(240, 187, 43);
+        }
+
+        .card-wrapper .iPhone-disk .media {
+            background: rgb(188, 3, 245);
+        }
+
+        .card-wrapper .iPhone-disk .mail {
+            background: rgb(76, 46, 212);
+        }
+
+        .card-wrapper .iPhone-disk .information {
+            background: rgb(65, 238, 13);
+        }
+
+        .card-wrapper .iPhone-disk .books {
+            background: rgb(241, 206, 2);
+        }
+
+        .card-wrapper .iPhone-disk .other {
+            background: rgb(104, 101, 102);
+        }
+
+        .card-wrapper .iPhone-disk .free {
+            background: rgb(27, 26, 26);
+        }
+
+        .card-wrapper .category {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-top: 12px;
+            border-bottom: solid 1px rgb(66, 65, 65);
+            padding-bottom: 2em;
+            color: #fff;
+        }
+
+        .card-wrapper .category dl,
+        .card-wrapper .category dt,
+        .card-wrapper .category dd {
+            margin: 0;
+            padding: 0;
+        }
+
+        .card-wrapper .category dl {
+            padding-left: 16px;
+        }
+
+        .card-wrapper .category dt {
+            position: relative;
+        }
+
+        .card-wrapper .category dt b {
+            position: absolute;
+            left: -14px;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            border-radius: 100px;
+        }
+
+        .card-wrapper .category dd {
+            color: #888;
+        }
+
+        .card-wrapper .app-list {
+            position: relative;
+            margin-top: 35px;
+        }
+
+        .card-wrapper .app-list .file {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-wrapper .app-list .file-logo {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .card-wrapper .app-list .logo {
+            background: #eee;
+            padding: 0 10px;
+            width: 25px;
+            height: 45px;
+            border-radius: 10px;
+        }
+
+        .card-wrapper .app-list .logo img {
+            width: 30px;
+            margin: .5em -0.15em;
+        }
+
+        .card-wrapper .background>.border {
+            border: solid rgb(90, 88, 88) 0.6px;
+        }
+
+        .card-wrapper .item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5px;
+            border-bottom: solid 1px rgba(255,255,255,0.15);
+        }
+
+        .card-wrapper .item:last-child{
+            border-bottom: none;
+        }
+
+        .card-wrapper .logo {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .card-wrapper .item .logo {
+            background: #eee;
+            padding: 0 10px;
+            width: 25px;
+            height: 45px;
+            border-radius: 10px;
+        }
+
+        .card-wrapper .item .logo img {
+            width: 30px;
+            margin: .5em -0.15em;
+        }
+
+        .card-wrapper .item .app-title {
+            
+            padding-left: 20px;
+            flex: 1 1 0;
+        }
+
+        .card-wrapper .item .app-title h2 {
+            margin: 0;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .card-wrapper .item .app-title span {
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        .card-wrapper .item .details {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .card-wrapper .item .details .currency span {
+            color: #aaa;
+        }
+    </style>
+    
+</head>
+
+<body>
+        <!-- https://github.com/pandawjmb/learn-html-css.git-->
+
+    <div class="card-wrapper">
+        <div class="background">
+            <div class="head">
+                <div class="mobile-phone">
+                    <div class="signal">
+                        <img src="./signal.svg" alt="">
+                    </div>
+                    <div class="china-telecom">
+                        <span>中国电信</span>
+                    </div>
+                    <div class="wifi">
+                        <img src="./wifi.svg" alt="">
+                    </div>
+                </div>
+                <div class="time">
+                    <span>下午 10:35</span>
+                </div>
+                <div class="pattern">
+                    <div class="lock">
+                        <img src="./lock.svg" alt="">
+                    </div>
+                    <div class="positioning">
+                        <img src="./positioning.svg" alt="">
+                    </div>
+                    <div class="battery">
+                        <img src="./battery.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="title">
+                <div class="return">
+                    <div class="brackets">
+                        <img src="./angle-brackets.svg" alt="">
+                    </div>
+                    <div class="currency">
+                        <span>通用</span>
+                    </div>
+                </div>
+                <div class="iPhone">
+                    <span><b>iPhone储存空间</b></span>
+                </div>
+            </div>
+        </div>
+        <div class="iPhone-disk">
+            <div class="background">
+                <div class="disk-wrapper">
+                    <div class="name">
+                        <span>iPhone</span>
+                    </div>
+                    <div class="disk">
+                        <span>已使用44.9GB/64GB</span>
+                    </div>
+                </div>
+                <div class="space">
+                    <div class="statistics">
+                        <b style="flex: 0 0 50%;" class="App"></b>
+                        <b style="flex: 0 0 8%;" class="photo"></b>
+                        <b style="flex: 0 0 1.5%;" class="media"></b>
+                        <b style="flex: 0 0 1.8%;" class="mail"></b>
+                        <b style="flex: 0 0 1.9%;" class="information"></b>
+                        <b style="flex: 0 0 1.8%;" class="books"></b>
+                        <b style="flex: 0 0 1.8%;" class="other"></b>
+                    </div>
+                    <div class="category">
+                        <dl>
+                            <dt><b class="App"></b>App</dt>
+                        </dl>
+                        <dl>
+                            <dt><b class="photo"></b>照片</dt>
+                        </dl>
+                        <dl>
+                            <dt><b class="media"></b>媒体</dt>
+                        </dl>
+                        <dl>
+                            <dt><b class="mail"></b>邮件</dt>
+                        </dl>
+                        <dl>
+                            <dt><b class="information"></b>信息</dt>
+                        </dl>
+                        <dl>
+                            <dt><b class="books"></b>图书</dt>
+                        </dl>
+                        <dl>
+                            <dt><b class="other"></b>其他</dt>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="app-list">
+            <div class="background">
+                <div class="item">
+                    <div class="logo">
+                        <img src="./file.svg" alt="">
+                    </div>
+                    <div class="app-title">
+                        <div class="app-name">
+                            <h2>文件</h2>
+                        </div>
+                        <div class="today">
+                            <span>上次使用: 今天</span>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="currency">
+                            <span>13.49 GB</span>
+                        </div>
+                        <div class="expand">
+                            <img src="./page.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="logo">
+                        <img src="./player.svg" alt="">
+                    </div>
+                    <div class="app-title">
+                        <div class="app-name">
+                            <h2>1k播放器</h2>
+                        </div>
+                        <div class="today">
+                            <span>上次使用: 今天</span>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="currency">
+                            <span>7.47 GB</span>
+                        </div>
+                        <div class="expand">
+                            <img src="./page.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="logo">
+                        <img src="./photo.svg" alt="">
+                    </div>
+                    <div class="app-title">
+                        <div class="app-name">
+                            <h2>照片</h2>
+                        </div>
+                        <div class="today">
+                            <span>上次使用: 今天</span>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="currency">
+                            <span>6.14 GB</span>
+                        </div>
+                        <div class="expand">
+                            <img src="./page.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
