@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>panda</title>
+    <style type="text/css">
+        .card-wrapper {
+            border: solid red 1px;
+            width: 500px;
+            height: 500px;
+        }
+        .card-wrapper .title{
+            display: flex;
+            flex-direction: row;
+        }
+        .card-wrapper .title .inputdemo{
+            margin-left: 38%;
+            margin-top: 3%;
+        }
+        .card-wrapper .order-wrapper {
+            display: flex;
+            flex-direction: row;
+        }
+        .card-wrapper .order-wrapper a{
+            display: flex;
+            flex-direction: row;
+            margin:.5em .5em ;
+            text-decoration: none;
+        }
+        .card-wrapper .border{
+            border: solid rgb(187, 182, 182) .6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-wrapper">
+        <div class="title">
+            <div class="my-order">
+                <h3>我的订单</h3>
+            </div>
+            <div class="inputdemo">
+                <form action="/example/html/form_action.asp" method="get">
+                    <input type="text" maxlength="18" size="18" placeholder="搜索商品名称、类别或收件人"/>
+                    <input type="submit" value="搜索订单" class="color"/>
+                </form>
+            </div>
+        </div>
+        <div class="order-wrapper">
+            <div class="order">
+                <a href="#">订单</a>
+            </div>
+            <div class="unprocessed">
+                <a href="#">未处理或正在处理的订单</a>
+            </div>
+            <div class="cancel">
+                <a href="#">已取消的订单</a>
+            </div>
+        </div>
+        <div class="border">
+        </div>
+    </div>
+</body>
+
+</html>
