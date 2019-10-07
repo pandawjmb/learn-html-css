@@ -8,9 +8,7 @@
     <title>panda</title>
     <style type="text/css">
         .card-wrapper {
-            border: solid red 1px;
             width: 600px;
-            height: 600px;
             position: relative;
         }
 
@@ -23,12 +21,12 @@
         }
 
         .card-wrapper .title>* {
-            border:solid 1px red;
+            border: solid 1px red;
         }
 
-        
+
         .card-wrapper .title .inputdemo input.keyword {
-            width:300px;
+            width: 300px;
         }
 
         .card-wrapper .order-wrapper {
@@ -44,16 +42,16 @@
             font-size: 12px;
             text-decoration: none;
             padding: 5px 10px;
-            margin-right:12px;
+            margin-right: 12px;
             position: relative;
-            top:1px;
-            color:#000;
+            top: 1px;
+            color: #000;
             transition: all 1s;
             border-bottom: solid 4px transparent;
         }
 
         .card-wrapper .order-wrapper a.current {
-            border-bottom:solid 4px #f60;
+            border-bottom: solid 4px #f60;
         }
 
         .card-wrapper .order-wrapper div a {
@@ -77,6 +75,10 @@
             text-decoration: none;
         }
 
+        .card-wrapper .order-item {
+            margin-bottom: 2em;
+        }
+
         .card-wrapper .order-number .number {
             display: flex;
             flex-direction: row;
@@ -84,16 +86,19 @@
 
 
         .card-wrapper .order-number .number .order {
-            padding:1em 1em;
+            padding: 1em 1em;
         }
+
         .card-wrapper .order-number .number .order ul,
         .card-wrapper .order-number .number .order li {
             list-style: none;
             font-size: 12px;
-            margin:0;padding:0;
+            margin: 0;
+            padding: 0;
         }
+
         .card-wrapper .order-number .order.summary {
-            flex:1 1 0;
+            flex: 1 1 0;
         }
 
         .card-wrapper .order-number .number .order ul.order {
@@ -106,52 +111,56 @@
             color: rgb(18, 127, 216);
         }
 
-        .card-wrapper .order-number .books .description ul li,
-        .card-wrapper .order-number .books .description ul li a {
-            text-decoration: none;
-            list-style: none;
-            font-size: 12px;
+
+        .card-wrapper .order-number {
+            border: solid rgb(208, 209, 204) 1px;
         }
 
-        .card-wrapper .order-number .books .description ul li a {
-            color: rgb(18, 127, 216);
+        .card-wrapper .number {
+            border-bottom: solid rgb(208, 209, 204) 0.5px;
+            background-color: rgb(248, 246, 246);
+
         }
 
-
-        .card-wrapper .books .logo-description {
+        .card-wrapper .item {
             display: flex;
-            flex-direction: row;
-            position: relative;
-            margin: 0 0 0 1em;
+            font-size: 12px;
+            padding: 1em;
+            border-bottom: solid 1px #eee;
         }
 
-        .card-wrapper .books .logo-description .logo {
-            position: absolute;
-            margin: 1em 0 0 1em;
-            border: solid red 1px;
+        .card-wrapper .item a {
+            color: rgb(18, 127, 216);
+            text-decoration: none;
+        }
+
+        .card-wrapper .item:last-child {
+            border-bottom: none;
+        }
+
+        .card-wrapper .item ul,
+        .card-wrapper .item li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .card-wrapper .item .books {
+            flex: 1 1 0;
+            display: flex;
+        }
+
+        .card-wrapper .item .books .logo {
             width: 50px;
             height: 50px;
-        }
-
-        .card-wrapper .books .logo-description .description {
-            position: absolute;
-            margin: 0 0 0 3em;
-        }
-
-        .card-wrapper .content-and-comments {
-            position: absolute;
-            position: relative;
-            margin: 1em 0 0 30em;
-        }
-
-        .card-wrapper .content-and-comments .comments {
-            position: absolute;
-            margin: .2em 0 0 0;
+            background: #eee;
+            margin-right: 1em;
         }
     </style>
 </head>
 
 <body>
+
     <div class="card-wrapper">
         <div class="title">
             <div class="my-order">
@@ -167,22 +176,7 @@
             <a href="#">未处理或正在处理的订单</a>
             <a href="#">已取消的订单</a>
         </div>
-
-        <script>
-            var order = document.querySelector(`.order-wrapper`)
-            order.addEventListener('click',function(event){
-                if(event.target.nodeName!=='A') {
-                    return
-                }
-               let a = order.querySelectorAll('a')
-               for(let i=0;i<a.length;i++){
-                   a[i].className=''
-               }
-               event.target.className = 'current'
-            })
         
-        </script>
-
         <div class="order-details">
             <div class="time">
                 <span><b>4个订单</b>时间下单时间为</span>
@@ -191,52 +185,115 @@
                 <input type="submit" value="过去6个月" class="color" />
             </div>
         </div>
-        <div class="order-number">
-            <div class="number">
-                <div class="order">
-                    <ul>
-                        <li>已下订单</li>
-                        <li>2019年9月16日</li>
-                    </ul>
-                </div>
-                <div class="order summary">
-                    <ul>
-                        <li>总价</li>
-                        <li>￥&nbsp;&nbsp;1.99</li>
-                    </ul>
-                </div>
-                <div class="order">
+        <div class="order-item">
+            <div class="order-number">
+                <div class="number">
+                    <div class="order">
+                        <ul>
+                            <li>已下订单</li>
+                            <li>2019年9月16日</li>
+                        </ul>
+                    </div>
+                    <div class="order summary">
+                        <ul>
+                            <li>总价</li>
+                            <li>￥&nbsp;&nbsp;1.99</li>
+                        </ul>
+                    </div>
+                    <div class="order">
                         <ul>
                             <li>订单编号 D01-8162850-8743819</li>
                             <li><a href="#">查看订单详情(含支付信息)</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">打印订单详情</a>
                             </li>
                         </ul>
-
-                </div>
-            </div>
-            <div class="books">
-                <div class="logo-description">
-                    <div class="logo">
-                    </div>
-                    <div class="description">
-                        <ul>
-                            <li><a href="#">曾国藩家书（慢读系列，李鸿章校勘，随文夹注版）</a></li>
-                            <li>曾国藩，李鸿章</li>
-                            <li>Kindle&nbsp;版</li>
-                        </ul>
                     </div>
                 </div>
-            </div>
-            <div class="content-and-comments">
-                <div class="content">
-                    <input type="submit" value="内容和设备" class="color" />
+                <div class="item">
+                    <div class="books">
+                        <div class="logo">
+                        </div>
+                        <div class="description">
+                            <ul>
+                                <li><a href="#">曾国藩家书（慢读系列，李鸿章校勘，随文夹注版）</a></li>
+                                <li>曾国藩，李鸿章</li>
+                                <li>Kindle&nbsp;版</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-and-comments">
+                        <div class="content">
+                            <input type="submit" value="内容和设备" class="color" />
+                        </div>
+                        <div class="comments">
+                            <input type="submit" value="撰写商品评论" class="color" />
+                        </div>
+                    </div>
                 </div>
-                <div class="comments">
-                    <input type="submit" value="撰写商品评论" class="color" />
+                <div class="item">
+                    <div class="books">
+                        <div class="logo">
+                        </div>
+                        <div class="description">
+                            <ul>
+                                <li><a href="#">曾国藩家书（慢读系列，李鸿章校勘，随文夹注版）</a></li>
+                                <li>曾国藩，李鸿章</li>
+                                <li>Kindle&nbsp;版</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-and-comments">
+                        <div class="content">
+                            <input type="submit" value="内容和设备" class="color" />
+                        </div>
+                        <div class="comments">
+                            <input type="submit" value="撰写商品评论" class="color" />
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="books">
+                        <div class="logo">
+                        </div>
+                        <div class="description">
+                            <ul>
+                                <li><a href="#">曾国藩家书（慢读系列，李鸿章校勘，随文夹注版）</a></li>
+                                <li>曾国藩，李鸿章</li>
+                                <li>Kindle&nbsp;版</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-and-comments">
+                        <div class="content">
+                            <input type="submit" value="内容和设备" class="color" />
+                        </div>
+                        <div class="comments">
+                            <input type="submit" value="撰写商品评论" class="color" />
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="books">
+                        <div class="logo">
+                        </div>
+                        <div class="description">
+                            <ul>
+                                <li><a href="#">曾国藩家书（慢读系列，李鸿章校勘，随文夹注版）</a></li>
+                                <li>曾国藩，李鸿章</li>
+                                <li>Kindle&nbsp;版</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-and-comments">
+                        <div class="content">
+                            <input type="submit" value="内容和设备" class="color" />
+                        </div>
+                        <div class="comments">
+                            <input type="submit" value="撰写商品评论" class="color" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
 </body>
 
