@@ -8,6 +8,11 @@
     <title>panda</title>
 </head>
 <style type="text/css">
+    .card-wrapper {
+        font-size: 12px;
+        min-width: 1120px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
     .card-wrapper .order {
         display: flex;
         flex-direction: row;
@@ -15,7 +20,7 @@
         background-color: rgb(240, 233, 233);
         height: 50px;
         border: solid red 1px;
-
+        padding:0 1em;
     }
 
     .card-wrapper .order .number,
@@ -43,7 +48,6 @@
     }
 
     .card-wrapper .order .i .contact span a {
-        font-size: 12px;
         background-color: gold;
         color: rgb(238, 15, 15);
     }
@@ -55,6 +59,8 @@
 
     .card-wrapper .product-wrapper {
         margin-left: 10px;
+        flex:0 0 50%;
+        padding:1em 1em 1em 0;
     }
 
     .card-wrapper .product-wrapper,
@@ -65,7 +71,6 @@
         word-break: normal;
         text-decoration: none;
         color: #000;
-        font-size: 12px;
         margin-left: 10px;
     }
 
@@ -85,25 +90,41 @@
     .card-wrapper .Bought-wrapper-mod {
         display: flex;
         flex-direction: row;
+        border:solid 1px rgb(90, 156, 218);
+        border-top: none;
     }
+
     .card-wrapper .Bought-wrapper-mod .server{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center
-    }
-    
-    .card-wrapper .Bought-wrapper-mod .server span a{
-        text-decoration: none;
-        color: #000;
+        align-items: center;
+        flex:1 1 0;
         font-size: 12px;
     }
-    .card-wrapper .Bought-wrapper-mod .server .price,
-    .card-wrapper .Bought-wrapper-mod .server .freight,
-    .card-wrapper .Bought-wrapper-mod .server .transaction-details,
-    .card-wrapper .Bought-wrapper-mod .server .comment-invoice{
+    
+    .card-wrapper .Bought-wrapper-mod .server a{
+        text-decoration: none;
+        color: #000;
+    }
+    .card-wrapper .Bought-wrapper-mod .server>div{
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-right: solid 1px rgb(90, 156, 218);
+        height:100%;
+        padding:0 1em;
+        flex:1 1 0;
+    }
+    .card-wrapper .Bought-wrapper-mod .server>div:first-child {
+        border-left: solid 1px rgb(90, 156, 218);
+    }
+    .card-wrapper .Bought-wrapper-mod .server>div:last-child {
+        border-right: none;
+    }
+    .card-wrapper .Bought-wrapper-mod .server>div.freight{
+        flex:0 0 150px;
     }
 </style>
 
@@ -131,6 +152,57 @@
                 </div>
                 <div class="delete">
                     <img class="delete-order" src="./delete.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="Bought-wrapper-mod">
+            <div class="product-wrapper">
+                <div class="product">
+                    <a href="#">
+                        <img src="//img.alicdn.com/imgextra/i2/TB1LlFfhoH1gK0jSZSyXXXtlpXa_.jpg_80x80.jpg" alt="#">
+                    </a>
+                </div>
+                <div class="name-links">
+                    <div class="shop">
+                        <span><a href="#">空调遥控器万能通用款型号格力美的海尔奥克斯志高科龙TCL海信三菱长虹松下春兰格兰仕新科AUX小天鹅原装全部</a></span>
+                        <span>
+                            <li>颜色分类：经典版无照明【万能空调遥控器】单个装裸机无正品</li>
+                        </span>
+                    </div>
+                    <div class="quality">
+                        <p><a href="#" title="七天无理由"><img src="//img.alicdn.com/tps/i3/T1Vyl6FCBlXXaSQP_X-16-16.png"
+                                    alt=""></a></p>
+                        <p><a href="#" title="如实描述"><img src="//img.alicdn.com/tps/TB1PDB6IVXXXXaVaXXXXXXXXXXX.png"
+                                    alt=""></a></p>
+                        <p><a href="#" title="品质保证"><img src="//img.alicdn.com/tps/i2/T1SyeXFpliXXaSQP_X-16-16.png"
+                                    alt=""></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="server">
+                <div class="price">
+                    <div>￥35.00</div>
+                    <div>￥6.90</div>
+                </div>
+                <div class="number">
+                    <div>1</div>
+                </div>
+                <div class="after-sale">
+                    <div><a href="#">申请售后</a></div>
+                </div>
+                <div class="freight">
+                    <div>￥6.90</div>
+                    <div>（含运费：￥0.00）</div>
+                </div>
+
+                <div class="transaction-details">
+                    <div><a href="#">交易成功</a></div>
+                    <div><a href="#">订单详情</a></div>
+                    <div><a href="#">花呗账单</a></div>
+                </div>
+                <div class="comment-invoice">
+                    <div><a href="#">追加评论</a></div>
+                    <div><a href="#">申请开票</a></div>
                 </div>
             </div>
         </div>
