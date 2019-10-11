@@ -13,6 +13,7 @@
         min-width: 1120px;
         font-family: Arial, Helvetica, sans-serif;
     }
+
     .card-wrapper .order {
         display: flex;
         flex-direction: row;
@@ -20,7 +21,7 @@
         background-color: rgb(240, 233, 233);
         height: 50px;
         border: solid red 1px;
-        padding:0 1em;
+        padding: 0 1em;
     }
 
     .card-wrapper .order .number,
@@ -54,13 +55,21 @@
 
     .card-wrapper .order .i .contact .aa {
         border: solid red 1px;
-        border-left: none;
+        display: inline-flex;
+        align-items: center;
+        padding: 3px 5px;
+        line-height: normal;
+        border-radius: 7px;
+    }
+
+    .card-wrapper .order .i .contact .aa img {
+        margin-right: 2px;
     }
 
     .card-wrapper .product-wrapper {
         margin-left: 10px;
-        flex:0 0 50%;
-        padding:1em 1em 1em 0;
+        flex: 0 0 50%;
+        padding: 1em 1em 1em 0;
     }
 
     .card-wrapper .product-wrapper,
@@ -87,48 +96,54 @@
     .card-wrapper .product-wrapper .name-links .quality p {
         padding: .5em;
     }
+
     .card-wrapper .Bought-wrapper-mod {
         display: flex;
         flex-direction: row;
-        border:solid 1px rgb(90, 156, 218);
+        border: solid 1px rgb(90, 156, 218);
         border-top: none;
     }
 
-    .card-wrapper .Bought-wrapper-mod .server{
+    .card-wrapper .Bought-wrapper-mod .server {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        flex:1 1 0;
+        flex: 1 1 0;
         font-size: 12px;
     }
-    
-    .card-wrapper .Bought-wrapper-mod .server a{
+
+    .card-wrapper .Bought-wrapper-mod .server a {
         text-decoration: none;
         color: #000;
     }
-    .card-wrapper .Bought-wrapper-mod .server>div{
+
+    .card-wrapper .Bought-wrapper-mod .server>div {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         border-right: solid 1px rgb(90, 156, 218);
-        height:100%;
-        padding:0 1em;
-        flex:1 1 0;
+        height: 100%;
+        padding: 0 1em;
+        flex: 1 1 0;
     }
+
     .card-wrapper .Bought-wrapper-mod .server>div:first-child {
         border-left: solid 1px rgb(90, 156, 218);
     }
+
     .card-wrapper .Bought-wrapper-mod .server>div:last-child {
         border-right: none;
     }
-    .card-wrapper .Bought-wrapper-mod .server>div.freight{
-        flex:0 0 150px;
+
+    .card-wrapper .Bought-wrapper-mod .server>div.freight {
+        flex: 0 0 150px;
     }
+
     .card-wrapper .Bought-wrapper-mod .server .original-price {
         text-decoration: line-through;
-        color:#aaa;
+        color: #aaa;
     }
 </style>
 
@@ -151,8 +166,11 @@
             </div>
             <div class="i">
                 <div class="contact">
-                    <img class="want" src="./wangwang.svg" alt="">
-                    <span><a class="aa" href="#">和我联系</a></span>
+
+                    <span><a class="aa" href="#">
+                            <img class="want" src="./wangwang.svg" alt="">
+                            和我联系
+                        </a></span>
                 </div>
                 <div class="delete">
                     <img class="delete-order" src="./delete.svg" alt="">
@@ -210,7 +228,7 @@
                 </div>
             </div>
         </div>
-       
+
     </div>
 </body>
 
