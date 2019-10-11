@@ -8,6 +8,10 @@
     <title>panda</title>
 </head>
 <style type="text/css">
+    .card-wrapper {
+        font-size: 12px;
+        min-width: 1120px;
+    }
     .card-wrapper .order {
         display: flex;
         flex-direction: row;
@@ -43,7 +47,6 @@
     }
 
     .card-wrapper .order .i .contact span a {
-        font-size: 12px;
         background-color: gold;
         color: rgb(238, 15, 15);
     }
@@ -55,8 +58,8 @@
 
     .card-wrapper .product-wrapper {
         margin-left: 10px;
-        flex:0 0 60%;
-        padding:1em 0;
+        flex:0 0 50%;
+        padding:1em 1em 1em 0;
     }
 
     .card-wrapper .product-wrapper,
@@ -67,7 +70,6 @@
         word-break: normal;
         text-decoration: none;
         color: #000;
-        font-size: 12px;
         margin-left: 10px;
     }
 
@@ -87,7 +89,7 @@
     .card-wrapper .Bought-wrapper-mod {
         display: flex;
         flex-direction: row;
-        border:solid 1px #ccc;
+        border:solid 1px rgb(90, 156, 218);
     }
     .card-wrapper .Bought-wrapper-mod:last-child {
         border-top:none;
@@ -99,23 +101,31 @@
         justify-content: space-between;
         align-items: center;
         flex:1 1 0;
-        padding: 1em;
-    }
-    
-    .card-wrapper .Bought-wrapper-mod .server span a{
-        text-decoration: none;
-        color: #000;
         font-size: 12px;
     }
-    .card-wrapper .Bought-wrapper-mod .server .price,
-    .card-wrapper .Bought-wrapper-mod .server .freight,
-    .card-wrapper .Bought-wrapper-mod .server .transaction-details,
-    .card-wrapper .Bought-wrapper-mod .server .comment-invoice{
+    
+    .card-wrapper .Bought-wrapper-mod .server a{
+        text-decoration: none;
+        color: #000;
+    }
+    .card-wrapper .Bought-wrapper-mod .server>div{
         display: flex;
         flex-direction: column;
-        height:100%;
         align-items: center;
-        justify-content: center;;
+        justify-content: center;
+        border-right: solid 1px rgb(90, 156, 218);
+        height:100%;
+        padding:0 1em;
+        flex:1 1 0;
+    }
+    .card-wrapper .Bought-wrapper-mod .server>div:first-child {
+        border-left: solid 1px rgb(90, 156, 218);
+    }
+    .card-wrapper .Bought-wrapper-mod .server>div:last-child {
+        border-right: none;
+    }
+    .card-wrapper .Bought-wrapper-mod .server>div.freight{
+        flex:0 0 150px;
     }
 </style>
 
@@ -172,28 +182,28 @@
             </div>
             <div class="server">
                 <div class="price">
-                    <span>￥35.00</span>
-                    <span>￥6.90</span>
+                    <div>￥35.00</div>
+                    <div>￥6.90</div>
                 </div>
                 <div class="number">
-                    <span>1</span>
+                    <div>1</div>
                 </div>
                 <div class="after-sale">
-                    <span><a href="#">申请售后</a></span>
+                    <div><a href="#">申请售后</a></div>
                 </div>
                 <div class="freight">
-                    <span>￥6.90</span>
-                    <span>（含运费：￥0.00）</span>
+                    <div>￥6.90</div>
+                    <div>（含运费：￥0.00）</div>
                 </div>
 
                 <div class="transaction-details">
-                    <span><a href="#">交易成功</a></span>
-                    <span><a href="#">订单详情</a></span>
-                    <span><a href="#">花呗账单</a></span>
+                    <div><a href="#">交易成功</a></div>
+                    <div><a href="#">订单详情</a></div>
+                    <div><a href="#">花呗账单</a></div>
                 </div>
                 <div class="comment-invoice">
-                    <span><a href="#">追加评论</a></span>
-                    <span><a href="#">申请开票</a></span>
+                    <div><a href="#">追加评论</a></div>
+                    <div><a href="#">申请开票</a></div>
                 </div>
             </div>
         </div>
