@@ -15,7 +15,7 @@
         background-color: rgb(240, 233, 233);
         height: 50px;
         border: solid red 1px;
-
+        padding:0 1em;
     }
 
     .card-wrapper .order .number,
@@ -55,6 +55,8 @@
 
     .card-wrapper .product-wrapper {
         margin-left: 10px;
+        flex:0 0 60%;
+        padding:1em 0;
     }
 
     .card-wrapper .product-wrapper,
@@ -85,12 +87,19 @@
     .card-wrapper .Bought-wrapper-mod {
         display: flex;
         flex-direction: row;
+        border:solid 1px #ccc;
     }
+    .card-wrapper .Bought-wrapper-mod:last-child {
+        border-top:none;
+    }
+
     .card-wrapper .Bought-wrapper-mod .server{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center
+        align-items: center;
+        flex:1 1 0;
+        padding: 1em;
     }
     
     .card-wrapper .Bought-wrapper-mod .server span a{
@@ -104,6 +113,9 @@
     .card-wrapper .Bought-wrapper-mod .server .comment-invoice{
         display: flex;
         flex-direction: column;
+        height:100%;
+        align-items: center;
+        justify-content: center;;
     }
 </style>
 
@@ -131,6 +143,57 @@
                 </div>
                 <div class="delete">
                     <img class="delete-order" src="./delete.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="Bought-wrapper-mod">
+            <div class="product-wrapper">
+                <div class="product">
+                    <a href="#">
+                        <img src="//img.alicdn.com/imgextra/i2/TB1LlFfhoH1gK0jSZSyXXXtlpXa_.jpg_80x80.jpg" alt="#">
+                    </a>
+                </div>
+                <div class="name-links">
+                    <div class="shop">
+                        <span><a href="#">空调遥控器万能通用款型号格力美的海尔奥克斯志高科龙TCL海信三菱长虹松下春兰格兰仕新科AUX小天鹅原装全部</a></span>
+                        <span>
+                            <li>颜色分类：经典版无照明【万能空调遥控器】单个装裸机无正品</li>
+                        </span>
+                    </div>
+                    <div class="quality">
+                        <p><a href="#" title="七天无理由"><img src="//img.alicdn.com/tps/i3/T1Vyl6FCBlXXaSQP_X-16-16.png"
+                                    alt=""></a></p>
+                        <p><a href="#" title="如实描述"><img src="//img.alicdn.com/tps/TB1PDB6IVXXXXaVaXXXXXXXXXXX.png"
+                                    alt=""></a></p>
+                        <p><a href="#" title="品质保证"><img src="//img.alicdn.com/tps/i2/T1SyeXFpliXXaSQP_X-16-16.png"
+                                    alt=""></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="server">
+                <div class="price">
+                    <span>￥35.00</span>
+                    <span>￥6.90</span>
+                </div>
+                <div class="number">
+                    <span>1</span>
+                </div>
+                <div class="after-sale">
+                    <span><a href="#">申请售后</a></span>
+                </div>
+                <div class="freight">
+                    <span>￥6.90</span>
+                    <span>（含运费：￥0.00）</span>
+                </div>
+
+                <div class="transaction-details">
+                    <span><a href="#">交易成功</a></span>
+                    <span><a href="#">订单详情</a></span>
+                    <span><a href="#">花呗账单</a></span>
+                </div>
+                <div class="comment-invoice">
+                    <span><a href="#">追加评论</a></span>
+                    <span><a href="#">申请开票</a></span>
                 </div>
             </div>
         </div>
