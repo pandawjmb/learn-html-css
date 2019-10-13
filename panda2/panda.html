@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>panda</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
     <style type="text/css">
         .card-wrapper {
             width: 600px;
@@ -172,9 +173,9 @@
             </div>
         </div>
         <div class="order-wrapper">
-            <a href="#" class="current">订单</a>
-            <a href="#">未处理或正在处理的订单</a>
-            <a href="#">已取消的订单</a>
+            <a href="#" 
+            @click="highlightIndex = index"
+            :class="{current: highlightIndex === index }" v-for="(tab,index) in tabs">{{tab}} {{index}}</a>
         </div>
         <div class="order-details">
             <div class="time">
@@ -193,7 +194,7 @@
                             <li>2019年9月16日</li>
                         </ul>
                     </div>
-                    
+
                     <div class="order summary">
                         <ul>
                             <li>总价</li>
@@ -296,7 +297,21 @@
         </div>
     </div>
     <div>
-        
+        <script>
+            window.abc= new Vue({
+                el: '.order-wrapper',
+                data() {
+                    return {
+                        highlightIndex:0,
+                        tabs: [
+                            '未处理或正在处理的订单',
+                            '已取消的订单',
+                            '订单',
+                        ]
+                    }
+                }
+            })
+        </script>
     </div>
 </body>
 
